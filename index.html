@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Dynamic Table</title>
+  </head>
+  <body>
+    <button id="dark-mode">Dark mode</button>
+    <div class="container" data-state="off">
+      <div class="loader">
+        <span style="--i: 1"></span><span style="--i: 2"></span>
+        <span style="--i: 3"> </span><span style="--i: 4"></span>
+        <span style="--i: 5"></span><span style="--i: 6"></span
+        ><span style="--i: 7"></span><span style="--i: 8"></span
+        ><span style="--i: 9"></span><span style="--i: 10"></span
+        ><span style="--i: 11"></span><span style="--i: 12"></span
+        ><span style="--i: 13"></span><span style="--i: 14"></span
+        ><span style="--i: 15"></span><span style="--i: 16"></span
+        ><span style="--i: 17"></span><span style="--i: 18"></span
+        ><span style="--i: 19"></span><span style="--i: 20"></span>
+      </div>
+      <table class="data-table">
+        <caption>
+          Most Active Users
+        </caption>
+        <thead>
+          <tr>
+            <th>
+              Name
+              <span
+                ><i class="fa-solid fa-caret-up"></i
+                ><i class="fa-solid fa-caret-down"></i
+              ></span>
+            </th>
+            <th>
+              Email
+              <span>
+                <i class="fa-solid fa-caret-up"></i
+                ><i class="fa-solid fa-caret-down"></i>
+              </span>
+            </th>
+            <th>
+              Username
+              <span
+                ><i class="fa-solid fa-caret-up"></i
+                ><i class="fa-solid fa-caret-down"></i
+              ></span>
+            </th>
+            <th>
+              Country
+              <span>
+                <i class="fa-solid fa-caret-up"></i
+                ><i class="fa-solid fa-caret-down"></i>
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="pagination-btns">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>1</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+    </div>
+  </body>
+</html>
