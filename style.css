@@ -82,7 +82,9 @@ html {
   height: 100%;
   box-sizing: border-box;
 }
-
+i:hover {
+  cursor: pointer;
+}
 button {
   color: var(--accent-clr);
   font-family: inherit;
@@ -185,8 +187,13 @@ body {
       height: 15px;
       border-radius: 50%;
       background: #ffa400;
-      box-shadow: 0 0 10px #ffa400, 0 0 20px #ffa400, 0 0 40px #090c9b,
-        0 0 60px #090c9b, 0 0 80px #090c9b, 0 0 100px #090c9b;
+      box-shadow:
+        0 0 10px #ffa400,
+        0 0 20px #ffa400,
+        0 0 40px #090c9b,
+        0 0 60px #090c9b,
+        0 0 80px #090c9b,
+        0 0 100px #090c9b;
       animation: animate 2s linear infinite;
       animation-delay: calc(0.1s * var(--i));
     }
