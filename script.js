@@ -45,21 +45,21 @@ function createPage(data, resultsPerPage = 10) {
   });
   let currentHTML = dataToHTML(data).slice(
     resultsPerPage * currentIndex,
-    resultsPerPage * (currentIndex + 1)
+    resultsPerPage * (currentIndex + 1),
   );
 
   displayPage.next = () => {
     currentIndex++;
     currentHTML = dataToHTML(data).slice(
       resultsPerPage * currentIndex,
-      resultsPerPage * (currentIndex + 1)
+      resultsPerPage * (currentIndex + 1),
     );
   };
   displayPage.previous = () => {
     currentIndex--;
     currentHTML = dataToHTML(data).slice(
       resultsPerPage * currentIndex,
-      resultsPerPage * (currentIndex + 1)
+      resultsPerPage * (currentIndex + 1),
     );
   };
   displayPage.clear = () => {
@@ -133,12 +133,12 @@ function sortingData(sortField, data) {
       break;
     case "Username":
       data.results.sort((a, b) =>
-        a.login.username.localeCompare(b.login.username)
+        a.login.username.localeCompare(b.login.username),
       );
       break;
     case "Country":
       data.results.sort((a, b) =>
-        a.location.country.localeCompare(b.location.country)
+        a.location.country.localeCompare(b.location.country),
       );
       break;
   }
@@ -159,12 +159,12 @@ function dataToHTML(data) {
 }
 
 darkModeBtn.addEventListener("click", () => {
-  document.startViewTransition(() => {
-    body.classList.toggle("dark-mode");
-  });
   if (body.classList.contains("dark-mode")) {
     darkModeBtn.textContent = "Light mode";
   } else {
     darkModeBtn.textContent = "Dark mode";
   }
+  document.startViewTransition(() => {
+    body.classList.toggle("dark-mode");
+  });
 });
