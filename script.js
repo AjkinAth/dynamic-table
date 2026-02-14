@@ -19,6 +19,7 @@ async function getUsers() {
     const res = await fetch("https://randomuser.me/api/0.8/?results=50");
     if (!res.ok) throw new Error(res.error);
     const data = await res.json();
+    console.log(data);
     currentPage = createPage(data);
     currentPage();
 
@@ -126,19 +127,21 @@ function createPage(data, resultsPerPage = 10) {
 function sortingData(sortField, data) {
   switch (sortField) {
     case "Name":
-      data.results.sort((a, b) => a.name.last.localeCompare(b.name.last));
+      data.results.sort((a, b) =>
+        a.user.name.last.localeCompare(b.user.name.last),
+      );
       break;
     case "Email":
-      data.results.sort((a, b) => a.email.localeCompare(b.email));
+      data.results.sort((a, b) => a.user.email.localeCompare(b.user.email));
       break;
     case "Username":
       data.results.sort((a, b) =>
-        a.login.username.localeCompare(b.login.username),
+        a.user.username.localeCompare(b.user.username),
       );
       break;
     case "Country":
       data.results.sort((a, b) =>
-        a.location.country.localeCompare(b.location.country),
+        a.user.location.state.localeCompare(b.user.location.state),
       );
       break;
   }
@@ -146,13 +149,15 @@ function sortingData(sortField, data) {
 function dataToHTML(data) {
   const { results } = data;
   const resultsArr = Array.from(results);
+  console.log(resultsArr);
   // for brevity's sake :)
   const resultsArrToHTML = resultsArr.map((item) => {
+    console.log(item.user);
     return `<tr>
-                     <td>${item.name.last + " " + item.name.first}</td>
-                     <td>${item.email}</td>
-                     <td>${item.login.username}</td>
-                     <td>${item.location.country}</td>
+                     <td>${item.user.name.last + " " + item.user.name.first}</td>
+                     <td>${item.user.email}</td>
+                     <td>${item.user.username}</td>
+                     <td>${item.user.location.state}</td>
                   </tr>`;
   });
   return resultsArrToHTML;
