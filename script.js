@@ -16,7 +16,7 @@ async function getUsers() {
     // Small pause for spinning loader demonstration :)
     await new Promise((resolve) => setTimeout(resolve, 5000));
 
-    const res = await fetch("https://randomuser.me/api/?results=50");
+    const res = await fetch("https://randomuser.me/api/0.8/?results=50");
     if (!res.ok) throw new Error(res.error);
     const data = await res.json();
     currentPage = createPage(data);
